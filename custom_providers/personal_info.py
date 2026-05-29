@@ -18,7 +18,7 @@ class PersonNameProvider(BaseProvider):
         name = f"{first} {last}"
 
         if with_middle:
-            middle = fake.first_name()
+            middle = self.generator.first_name()
             name = f"{first} {middle} {last}"
 
         if with_suffix:
