@@ -98,8 +98,8 @@ class CustomCreditCardProvider(BaseProvider):
         digits = digits_of(card_number)
         odd_digits = digits[-1::-2]
         even_digits = digits[-2::-2]
-        checksum = sum(odd_digits)
-        for d in even_digits:
+        checksum = sum(even_digits)
+        for d in odd_digits:
             checksum += sum(digits_of(d * 2))
         return (10 - (checksum % 10)) % 10
 
